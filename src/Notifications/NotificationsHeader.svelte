@@ -4,8 +4,10 @@
 
 <header class="header">
   <h1 class="notifications">
-    Notifications <span class="notifications__count">{notificationsUnread}</span
-    >
+    Notifications
+    {#if notificationsUnread}
+      <span class="notifications__count">{notificationsUnread}</span>
+    {/if}
   </h1>
   <button class="mark-button" on:click>Mark all as read</button>
 </header>

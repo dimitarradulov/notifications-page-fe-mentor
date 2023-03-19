@@ -917,7 +917,7 @@ var app = (function () {
     }
 
     // (57:2) {#if commentPicture}
-    function create_if_block(ctx) {
+    function create_if_block$1(ctx) {
     	let div;
     	let img;
     	let img_src_value;
@@ -948,7 +948,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(57:2) {#if commentPicture}",
     		ctx
@@ -987,7 +987,7 @@ var app = (function () {
     	let if_block0 = current_block_type(ctx);
     	let if_block1 = /*unread*/ ctx[0] && create_if_block_2(ctx);
     	let if_block2 = /*privateMessage*/ ctx[7] && create_if_block_1(ctx);
-    	let if_block3 = /*commentPicture*/ ctx[4] && create_if_block(ctx);
+    	let if_block3 = /*commentPicture*/ ctx[4] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -1096,7 +1096,7 @@ var app = (function () {
     				if (if_block3) {
     					if_block3.p(ctx, dirty);
     				} else {
-    					if_block3 = create_if_block(ctx);
+    					if_block3 = create_if_block$1(ctx);
     					if_block3.c();
     					if_block3.m(article, null);
     				}
@@ -1322,33 +1322,64 @@ var app = (function () {
 
     const file$2 = "src\\Notifications\\NotificationsHeader.svelte";
 
+    // (7:4) {#if notificationsUnread}
+    function create_if_block(ctx) {
+    	let span;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(/*notificationsUnread*/ ctx[0]);
+    			attr_dev(span, "class", "notifications__count svelte-7yytrz");
+    			add_location(span, file$2, 7, 6, 175);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*notificationsUnread*/ 1) set_data_dev(t, /*notificationsUnread*/ ctx[0]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(7:4) {#if notificationsUnread}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$2(ctx) {
     	let header;
     	let h1;
     	let t0;
-    	let span;
     	let t1;
-    	let t2;
     	let button;
     	let mounted;
     	let dispose;
+    	let if_block = /*notificationsUnread*/ ctx[0] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
     			header = element("header");
     			h1 = element("h1");
-    			t0 = text("Notifications ");
-    			span = element("span");
-    			t1 = text(/*notificationsUnread*/ ctx[0]);
-    			t2 = space();
+    			t0 = text("Notifications\r\n    ");
+    			if (if_block) if_block.c();
+    			t1 = space();
     			button = element("button");
     			button.textContent = "Mark all as read";
-    			attr_dev(span, "class", "notifications__count svelte-7yytrz");
-    			add_location(span, file$2, 5, 18, 137);
     			attr_dev(h1, "class", "notifications svelte-7yytrz");
     			add_location(h1, file$2, 4, 2, 91);
     			attr_dev(button, "class", "mark-button svelte-7yytrz");
-    			add_location(button, file$2, 8, 2, 219);
+    			add_location(button, file$2, 10, 2, 262);
     			attr_dev(header, "class", "header svelte-7yytrz");
     			add_location(header, file$2, 3, 0, 64);
     		},
@@ -1359,9 +1390,8 @@ var app = (function () {
     			insert_dev(target, header, anchor);
     			append_dev(header, h1);
     			append_dev(h1, t0);
-    			append_dev(h1, span);
-    			append_dev(span, t1);
-    			append_dev(header, t2);
+    			if (if_block) if_block.m(h1, null);
+    			append_dev(header, t1);
     			append_dev(header, button);
 
     			if (!mounted) {
@@ -1370,12 +1400,24 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*notificationsUnread*/ 1) set_data_dev(t1, /*notificationsUnread*/ ctx[0]);
+    			if (/*notificationsUnread*/ ctx[0]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					if_block.m(h1, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(header);
+    			if (if_block) if_block.d();
     			mounted = false;
     			dispose();
     		}
