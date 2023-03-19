@@ -118,10 +118,15 @@
   }
 
   .notification__private-message {
+    cursor: pointer;
     margin-block-start: 1rem;
     padding: 1.5rem;
     border: 1px solid var(--light-grayish-blue-2);
     border-radius: var(--border-radius);
+  }
+
+  .notification__private-message:hover {
+    background-color: var(--very-light-grayish-blue);
   }
 
   .notification__person,

@@ -688,7 +688,7 @@ var app = (function () {
     			a = element("a");
     			t1 = text(/*leftGroup*/ ctx[6]);
     			attr_dev(a, "href", "#");
-    			attr_dev(a, "class", "notification__group svelte-g4cgpi");
+    			attr_dev(a, "class", "notification__group svelte-1arijb9");
     			add_location(a, file$3, 39, 23, 1498);
     		},
     		m: function mount(target, anchor) {
@@ -728,7 +728,7 @@ var app = (function () {
     			a = element("a");
     			t1 = text(/*joinedGroup*/ ctx[5]);
     			attr_dev(a, "href", "#");
-    			attr_dev(a, "class", "notification__group svelte-g4cgpi");
+    			attr_dev(a, "class", "notification__group svelte-1arijb9");
     			add_location(a, file$3, 35, 30, 1350);
     		},
     		m: function mount(target, anchor) {
@@ -823,7 +823,7 @@ var app = (function () {
     			t0 = text("reacted to your recent post\r\n        ");
     			a = element("a");
     			t1 = text(/*reactPost*/ ctx[3]);
-    			attr_dev(a, "class", "notification__react-post svelte-g4cgpi");
+    			attr_dev(a, "class", "notification__react-post svelte-1arijb9");
     			attr_dev(a, "href", "#");
     			add_location(a, file$3, 29, 8, 1076);
     		},
@@ -859,7 +859,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			span = element("span");
-    			attr_dev(span, "class", "notification__unread svelte-g4cgpi");
+    			attr_dev(span, "class", "notification__unread svelte-1arijb9");
     			add_location(span, file$3, 45, 8, 1649);
     		},
     		m: function mount(target, anchor) {
@@ -890,7 +890,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(/*privateMessage*/ ctx[7]);
-    			attr_dev(p, "class", "notification__private-message svelte-g4cgpi");
+    			attr_dev(p, "class", "notification__private-message svelte-1arijb9");
     			add_location(p, file$3, 52, 6, 1798);
     		},
     		m: function mount(target, anchor) {
@@ -929,7 +929,7 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*commentPicture*/ ctx[4])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "commented");
     			add_location(img, file$3, 58, 6, 1963);
-    			attr_dev(div, "class", "notification__comment-picture svelte-g4cgpi");
+    			attr_dev(div, "class", "notification__comment-picture svelte-1arijb9");
     			add_location(div, file$3, 57, 4, 1912);
     		},
     		m: function mount(target, anchor) {
@@ -1013,16 +1013,16 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = "images/avatar-" + toKebabCase(/*personName*/ ctx[2]) + ".webp")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "avatar");
     			add_location(img, file$3, 20, 4, 796);
-    			attr_dev(div0, "class", "notification__avatar svelte-g4cgpi");
+    			attr_dev(div0, "class", "notification__avatar svelte-1arijb9");
     			add_location(div0, file$3, 19, 2, 756);
-    			attr_dev(strong, "class", "notification__person svelte-g4cgpi");
+    			attr_dev(strong, "class", "notification__person svelte-1arijb9");
     			add_location(strong, file$3, 25, 6, 935);
     			add_location(p0, file$3, 24, 4, 924);
     			attr_dev(p1, "class", "notification__date");
     			add_location(p1, file$3, 49, 4, 1717);
-    			attr_dev(div1, "class", "notification__content svelte-g4cgpi");
+    			attr_dev(div1, "class", "notification__content svelte-1arijb9");
     			add_location(div1, file$3, 23, 2, 883);
-    			attr_dev(article, "class", "notification svelte-g4cgpi");
+    			attr_dev(article, "class", "notification svelte-1arijb9");
     			toggle_class(article, "notification--unread", /*unread*/ ctx[0]);
     			add_location(article, file$3, 18, 0, 686);
     		},
